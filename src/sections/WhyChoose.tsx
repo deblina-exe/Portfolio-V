@@ -29,14 +29,14 @@ function WhyChoose() {
                             whileHover={{ y: -4 }}
                             className="glass group flex items-center gap-4 rounded-2xl p-5 sm:p-6"
                         >
-                            <span className="relative flex h-12 w-12 flex-none items-center justify-center rounded-full bg-gradient-to-br from-accent-500 to-accent-400 text-brand-700 shadow-lg">
+                            <span className="relative flex h-12 w-12 flex-none items-center justify-center rounded-full bg-gradient-to-br from-accent-500 to-accent-600 text-white shadow-lg shadow-accent-500/30">
                                 <span className="absolute inset-0 rounded-full bg-accent-400/40 opacity-0 transition-opacity duration-300 group-hover:animate-ping group-hover:opacity-100" />
                                 <FiCheck className="relative h-6 w-6" strokeWidth={3} />
                             </span>
                             <span className="flex-none">
-                                <feature.icon className="h-6 w-6 text-brand-200" />
+                                <feature.icon className="h-6 w-6 text-accent-600" />
                             </span>
-                            <h3 className="font-display text-base font-semibold text-white sm:text-lg">
+                            <h3 className="font-display text-base font-semibold text-ink-900 sm:text-lg">
                                 {feature.title}
                             </h3>
                         </motion.div>

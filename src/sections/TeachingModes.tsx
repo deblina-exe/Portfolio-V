@@ -29,7 +29,7 @@ function TeachingModes() {
                             className="glass group relative overflow-hidden rounded-2xl p-7 text-center"
                         >
                             {/* Hover sheen */}
-                            <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+                            <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-accent-300/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
 
                             <motion.span
                                 whileHover={{ rotate: 6, scale: 1.08 }}
@@ -38,7 +38,7 @@ function TeachingModes() {
                                 <mode.icon className="h-8 w-8" />
                             </motion.span>
 
-                            <h3 className="mt-5 font-display text-xl font-semibold text-white">
+                            <h3 className="mt-5 font-display text-xl font-semibold text-ink-900">
                                 {mode.title}
                             </h3>
                             <p className="mt-2 text-sm leading-relaxed text-ink-400">

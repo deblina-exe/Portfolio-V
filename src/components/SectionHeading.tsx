@@ -17,10 +17,10 @@ function SectionHeading({ eyebrow, title, subtitle }: SectionHeadingProps) {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
         >
-            <span className="glass mb-4 inline-block rounded-full px-4 py-1.5 text-xs font-semibold tracking-[0.2em] text-brand-200 uppercase">
+            <span className="glass mb-4 inline-block rounded-full px-4 py-1.5 text-xs font-semibold tracking-[0.2em] text-accent-600 uppercase">
                 {eyebrow}
             </span>
-            <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl md:text-5xl">
                 {title}
             </h2>
             {subtitle && (

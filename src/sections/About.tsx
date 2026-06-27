@@ -32,8 +32,8 @@ function About() {
                                 Teaching is more than delivering a syllabus — it's about sparking
                                 curiosity and building a foundation that lasts. With years of
                                 hands-on experience, I focus on{" "}
-                                <span className="text-accent-400">why</span> things work, not
-                                just <span className="text-accent-400">what</span> to write.
+                                <span className="font-semibold text-accent-600">why</span> things work, not
+                                just <span className="font-semibold text-accent-600">what</span> to write.
                             </p>
                             <p className="mt-4 text-base leading-relaxed text-ink-400 sm:text-lg">
                                 Every student learns differently, so every learning plan is
@@ -50,10 +50,10 @@ function About() {
                                     whileHover={{ y: -4 }}
                                     className="glass group h-full rounded-2xl p-6"
                                 >
-                                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-accent-500 text-white shadow-lg transition-transform group-hover:scale-110">
+                                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-accent-500 to-accent-600 text-white shadow-lg shadow-accent-500/30 transition-transform group-hover:scale-110">
                                         <f.icon className="h-6 w-6" />
                                     </span>
-                                    <h3 className="mt-4 font-display text-lg font-semibold text-white">
+                                    <h3 className="mt-4 font-display text-lg font-semibold text-ink-900">
                                         {f.title}
                                     </h3>
                                     <p className="mt-1 text-sm leading-relaxed text-ink-400">

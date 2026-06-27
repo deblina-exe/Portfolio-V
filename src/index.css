@@ -1,40 +1,41 @@
 @import "tailwindcss";
 
 /* ============================================================
-   Theme tokens (Tailwind v4 @theme)
+   Theme tokens (Tailwind v4 @theme) — Light "Modern Professional"
    ============================================================ */
 @theme {
   --font-sans: "Plus Jakarta Sans", "Inter", system-ui, -apple-system, sans-serif;
   --font-display: "Sora", "Plus Jakarta Sans", system-ui, sans-serif;
 
-  /* Slate blue brand scale (Modern Professional) */
-  --color-brand-50: #f3f6f7;
-  --color-brand-100: #ecf0f1;
-  --color-brand-200: #bdc3c7;
-  --color-brand-300: #95a5a6;
-  --color-brand-400: #7f8c8d;
-  --color-brand-500: #5d6d7e;
-  --color-brand-600: #34495e;
+  /* Slate brand scale */
+  --color-brand-50: #f4f7f9;
+  --color-brand-100: #e6edf1;
+  --color-brand-200: #c9d4dc;
+  --color-brand-300: #9fb0bb;
+  --color-brand-400: #76899a;
+  --color-brand-500: #54697d;
+  --color-brand-600: #3a4f64;
   --color-brand-700: #2c3e50;
 
-  /* Soft silver accent scale */
-  --color-accent-300: #ecf0f1;
-  --color-accent-400: #d6dcde;
-  --color-accent-500: #bdc3c7;
-  --color-accent-600: #95a5a6;
+  /* Cool azure accent scale (the "pop") */
+  --color-accent-300: #8fc0e6;
+  --color-accent-400: #6aa6d6;
+  --color-accent-500: #4a8bc4;
+  --color-accent-600: #3a6f9e;
 
-  --color-ink-50: #ecf0f1;
-  --color-ink-200: #cfd6d8;
-  --color-ink-400: #95a5a6;
-  --color-ink-600: #7f8c8d;
-  --color-ink-900: #2c3e50;
+  /* Ink = text colors for a light surface */
+  --color-ink-50: #1f2d3a;
+  --color-ink-200: #34495e;
+  --color-ink-400: #64748b;
+  --color-ink-600: #94a3b3;
+  --color-ink-900: #16222e;
 }
 
 /* ============================================================
    Base
    ============================================================ */
 :root {
-  color-scheme: dark;
+  color-scheme: light;
   scroll-behavior: smooth;
 }
 
@@ -53,9 +54,14 @@ body {
 
 body {
   font-family: var(--font-sans);
-  background-color: #2c3e50;
-  background-image: linear-gradient(180deg, #34495e 0%, #2c3e50 60%, #283848 100%);
-  color: var(--color-ink-50);
+  background-color: #eef3f7;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(74, 139, 196, 0.12), transparent 42%),
+    radial-gradient(at 100% 0%, rgba(149, 165, 166, 0.14), transparent 45%),
+    radial-gradient(at 50% 100%, rgba(74, 139, 196, 0.08), transparent 50%),
+    linear-gradient(180deg, #f7fafc 0%, #eef3f7 100%);
+  background-attachment: fixed;
+  color: var(--color-ink-200);
 }
 
 /* Custom scrollbar */
@@ -64,11 +70,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #2c3e50;
+  background: #eef3f7;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #7f8c8d, #bdc3c7);
+  background: linear-gradient(180deg, #9fb0bb, #4a8bc4);
   border-radius: 999px;
 }
 
@@ -86,48 +92,58 @@ body {
    ============================================================ */
 @layer utilities {
 
-  /* Frosted glass card */
+  /* Frosted glass card (light) */
   .glass {
     background: linear-gradient(135deg,
-        rgba(255, 255, 255, 0.08),
-        rgba(255, 255, 255, 0.02));
-    backdrop-filter: blur(18px) saturate(140%);
-    -webkit-backdrop-filter: blur(18px) saturate(140%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+        rgba(255, 255, 255, 0.75),
+        rgba(255, 255, 255, 0.45));
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.7);
     box-shadow:
-      0 8px 32px rgba(2, 6, 23, 0.45),
-      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      0 14px 34px -16px rgba(44, 62, 80, 0.28),
+      0 2px 6px -2px rgba(44, 62, 80, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.85);
   }
 
   .glass-strong {
     background: linear-gradient(135deg,
-        rgba(255, 255, 255, 0.12),
-        rgba(255, 255, 255, 0.04));
-    backdrop-filter: blur(24px) saturate(150%);
-    -webkit-backdrop-filter: blur(24px) saturate(150%);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    box-shadow: 0 10px 40px rgba(2, 6, 23, 0.5);
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.68));
+    backdrop-filter: blur(22px) saturate(170%);
+    -webkit-backdrop-filter: blur(22px) saturate(170%);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    box-shadow:
+      0 22px 54px -18px rgba(44, 62, 80, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
   }
 
-  /* Gradient text */
+  /* Gradient text (cool slate -> azure) */
   .text-gradient {
-    background: linear-gradient(120deg, #ecf0f1 0%, #bdc3c7 50%, #7f8c8d 100%);
+    background: linear-gradient(120deg, #2c3e50 0%, #4a8bc4 55%, #3a6f9e 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
-  /* Soft silver gradient text */
+  /* Accent gradient text for stats / codes */
   .text-silver {
-    background: linear-gradient(120deg, #ecf0f1 0%, #bdc3c7 100%);
+    background: linear-gradient(120deg, #34495e 0%, #4a8bc4 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+
+  /* Animated gradient border wrapper */
+  .gradient-ring {
+    background: linear-gradient(120deg, #4a8bc4, #95a5a6, #4a8bc4);
+    background-size: 200% 200%;
+    animation: gradient-pan 6s ease infinite;
   }
 
   /* Focus ring for accessibility */
   .focus-ring:focus-visible {
-    outline: 2px solid var(--color-brand-400);
+    outline: 2px solid var(--color-accent-500);
     outline-offset: 3px;
   }
 }
@@ -173,6 +189,38 @@ body {
   }
 }
 
+/* Aurora drift for background blobs */
+@keyframes aurora {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+
+  33% {
+    transform: translate3d(40px, -30px, 0) scale(1.12) rotate(8deg);
+  }
+
+  66% {
+    transform: translate3d(-30px, 24px, 0) scale(0.95) rotate(-6deg);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+}
+
+/* Organic blob morphing */
+@keyframes blob-morph {
+
+  0%,
+  100% {
+    border-radius: 42% 58% 63% 37% / 42% 45% 55% 58%;
+  }
+
+  50% {
+    border-radius: 58% 42% 37% 63% / 55% 58% 42% 45%;
+  }
+}
+
 .animate-float-slow {
   animation: float-slow 12s ease-in-out infinite;
 }
@@ -184,4 +232,12 @@ body {
 .animate-gradient-pan {
   background-size: 200% 200%;
   animation: gradient-pan 8s ease infinite;
+}
+
+.animate-aurora {
+  animation: aurora 18s ease-in-out infinite;
+}
+
+.animate-blob {
+  animation: blob-morph 14s ease-in-out infinite;
 }

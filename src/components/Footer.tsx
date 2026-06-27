@@ -20,10 +20,10 @@ function Footer() {
                         {/* Brand */}
                         <div>
                             <a href="#home" className="focus-ring inline-flex items-center gap-2.5 rounded-lg">
-                                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-accent-500 text-white">
+                                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-accent-500 to-accent-600 text-white shadow-lg shadow-accent-500/30">
                                     <HiAcademicCap className="h-5 w-5" />
                                 </span>
-                                <span className="font-display text-lg font-bold text-white">
+                                <span className="font-display text-lg font-bold text-ink-900">
                                     {tutor.name}
                                 </span>
                             </a>
@@ -38,7 +38,7 @@ function Footer() {
 
                         {/* Quick links */}
                         <nav aria-label="Footer">
-                            <h3 className="font-display text-sm font-semibold tracking-wide text-white uppercase">
+                            <h3 className="font-display text-sm font-semibold tracking-wide text-ink-900 uppercase">
                                 Explore
                             </h3>
                             <ul className="mt-4 space-y-2.5">
@@ -46,7 +46,7 @@ function Footer() {
                                     <li key={link.href}>
                                         <a
                                             href={link.href}
-                                            className="focus-ring rounded text-sm text-ink-400 transition-colors hover:text-white"
+                                            className="focus-ring rounded text-sm text-ink-400 transition-colors hover:text-accent-600"
                                         >
                                             {link.label}
                                         </a>
@@ -57,7 +57,7 @@ function Footer() {
 
                         {/* Connect */}
                         <div>
-                            <h3 className="font-display text-sm font-semibold tracking-wide text-white uppercase">
+                            <h3 className="font-display text-sm font-semibold tracking-wide text-ink-900 uppercase">
                                 Connect
                             </h3>
                             <div className="mt-4 flex gap-3">
@@ -66,7 +66,7 @@ function Footer() {
                                         key={s.label}
                                         href={s.href}
                                         aria-label={s.label}
-                                        className="focus-ring glass flex h-10 w-10 items-center justify-center rounded-xl text-ink-200 transition-colors hover:text-white"
+                                        className="focus-ring glass flex h-10 w-10 items-center justify-center rounded-xl text-ink-200 transition-colors hover:text-accent-600"
                                     >
                                         <s.icon className="h-5 w-5" />
                                     </a>
@@ -75,7 +75,7 @@ function Footer() {
                         </div>
                     </div>
 
-                    <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 sm:flex-row">
+                    <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-brand-700/10 pt-6 sm:flex-row">
                         <p className="text-sm text-ink-400">
                             © {new Date().getFullYear()} {tutor.name}. All rights reserved.
                         </p>

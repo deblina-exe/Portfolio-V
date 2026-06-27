@@ -49,9 +49,9 @@ function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="glass mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium text-brand-100 sm:text-sm"
+                        className="glass mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium text-ink-200 sm:text-sm"
                     >
-                        <HiSparkles className="h-4 w-4 text-accent-400" />
+                        <HiSparkles className="h-4 w-4 text-accent-500" />
                         {tutor.subheading}
                     </motion.span>
 
@@ -59,7 +59,7 @@ function Hero() {
                         initial={{ opacity: 0, y: 24 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.05 }}
-                        className="font-display text-5xl leading-[1.05] font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl"
+                        className="font-display text-5xl leading-[1.05] font-extrabold tracking-tight text-ink-900 sm:text-6xl lg:text-7xl"
                     >
                         <span className="text-gradient animate-gradient-pan">
                             {tutor.name.toUpperCase()}
@@ -70,7 +70,7 @@ function Hero() {
                         initial={{ opacity: 0, y: 24 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="mt-4 font-display text-2xl font-semibold text-white sm:text-3xl"
+                        className="mt-4 font-display text-2xl font-semibold text-ink-900 sm:text-3xl"
                     >
                         {tutor.tagline}
                     </motion.p>
@@ -91,8 +91,8 @@ function Hero() {
                         transition={{ duration: 0.6, delay: 0.22 }}
                         className="mt-7 flex justify-center lg:justify-start"
                     >
-                        <span className="glass-strong inline-flex items-center gap-2.5 rounded-full px-5 py-2.5 text-sm font-semibold text-white">
-                            <FiAward className="h-5 w-5 text-accent-400" />
+                        <span className="glass-strong inline-flex items-center gap-2.5 rounded-full px-5 py-2.5 text-sm font-semibold text-ink-900">
+                            <FiAward className="h-5 w-5 text-accent-500" />
                             {tutor.experience}
                         </span>
                     </motion.div>
@@ -106,14 +106,14 @@ function Hero() {
                     >
                         <a
                             href="#contact"
-                            className="focus-ring group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-accent-500 to-accent-400 px-7 py-3.5 text-sm font-bold text-brand-700 shadow-lg shadow-accent-500/30 transition-transform hover:scale-[1.03] sm:w-auto sm:text-base"
+                            className="focus-ring group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-accent-500 to-accent-600 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-accent-500/30 transition-transform hover:scale-[1.03] sm:w-auto sm:text-base"
                         >
                             Book a Free Demo
                             <FiArrowRight className="transition-transform group-hover:translate-x-1" />
                         </a>
                         <a
                             href="#qualifications"
-                            className="focus-ring glass inline-flex w-full items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10 sm:w-auto sm:text-base"
+                            className="focus-ring glass inline-flex w-full items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-sm font-semibold text-ink-900 transition-colors hover:bg-brand-700/5 sm:w-auto sm:text-base"
                         >
                             View Qualifications
                         </a>
@@ -128,13 +128,13 @@ function Hero() {
                     className="relative mx-auto w-full max-w-sm"
                 >
                     {/* Glow */}
-                    <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-to-br from-brand-500/40 to-accent-500/30 blur-2xl" />
+                    <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-to-br from-accent-400/40 to-brand-300/30 blur-2xl" />
 
                     <div className="glass-strong rounded-[2rem] p-6 sm:p-8">
                         {/* Image placeholder */}
-                        <div className="relative mx-auto flex aspect-square w-full items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-brand-600/60 to-brand-700/60">
+                        <div className="relative mx-auto flex aspect-square w-full items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-brand-600 to-brand-700">
                             <div className="text-center">
-                                <span className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-accent-500 to-accent-400 text-brand-700 shadow-xl">
+                                <span className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-accent-500 to-accent-400 text-white shadow-xl">
                                     <HiAcademicCap className="h-12 w-12" />
                                 </span>
                                 <p className="mt-4 font-display text-lg font-bold text-white">
@@ -144,12 +144,12 @@ function Hero() {
                             </div>
                         </div>
 
-                        <div className="mt-5 flex items-center justify-between rounded-xl bg-white/5 px-4 py-3">
+                        <div className="mt-5 flex items-center justify-between rounded-xl bg-brand-700/5 px-4 py-3">
                             <span className="text-sm text-ink-400">Now accepting</span>
-                            <span className="flex items-center gap-2 text-sm font-semibold text-brand-100">
+                            <span className="flex items-center gap-2 text-sm font-semibold text-accent-600">
                                 <span className="relative flex h-2.5 w-2.5">
-                                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-200 opacity-75" />
-                                    <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-brand-200" />
+                                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-500 opacity-75" />
+                                    <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent-500" />
                                 </span>
                                 New students
                             </span>

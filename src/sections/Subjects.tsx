@@ -22,7 +22,7 @@ function Subjects() {
                         <div key={group.level}>
                             <div className="mb-6 flex flex-col items-center text-center sm:flex-row sm:items-end sm:justify-between sm:text-left">
                                 <div>
-                                    <h3 className="font-display text-xl font-bold text-white sm:text-2xl">
+                                    <h3 className="font-display text-xl font-bold text-ink-900 sm:text-2xl">
                                         {group.level}
                                     </h3>
                                     <p className="mt-1 text-sm text-ink-400">{group.caption}</p>
@@ -46,7 +46,7 @@ function Subjects() {
                                             <span className="flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-accent-500 text-white shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                                                 <subject.icon className="h-6 w-6" />
                                             </span>
-                                            <h4 className="font-display text-base font-semibold text-white">
+                                            <h4 className="font-display text-base font-semibold text-ink-900">
                                                 {subject.title}
                                             </h4>
                                         </div>

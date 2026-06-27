@@ -63,10 +63,10 @@ function Navbar() {
                     href="#home"
                     className="focus-ring group flex flex-none items-center gap-2.5 rounded-lg"
                 >
-                    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-300 text-white shadow-lg shadow-brand-700/30">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-accent-500 to-accent-400 text-white shadow-lg shadow-accent-500/30">
                         <HiAcademicCap className="h-5 w-5" />
                     </span>
-                    <span className="font-display text-lg font-bold tracking-tight whitespace-nowrap text-white">
+                    <span className="font-display text-lg font-bold tracking-tight whitespace-nowrap text-ink-900">
                         {tutor.name.split(" ")[0]}
                         <span className="text-gradient"> Sir</span>
                     </span>
@@ -82,15 +82,15 @@ function Navbar() {
                                     href={link.href}
                                     aria-current={isActive ? "page" : undefined}
                                     className={`focus-ring relative rounded-lg px-3 py-2 text-sm font-medium transition-colors ${isActive
-                                        ? "text-white"
-                                        : "text-ink-200 hover:text-white"
+                                        ? "text-accent-600"
+                                        : "text-ink-200 hover:text-accent-600"
                                         }`}
                                 >
                                     {link.label}
                                     {isActive && (
                                         <motion.span
                                             layoutId="nav-active"
-                                            className="absolute inset-0 -z-10 rounded-lg bg-white/10"
+                                            className="absolute inset-0 -z-10 rounded-lg bg-accent-500/12"
                                             transition={{ type: "spring", stiffness: 380, damping: 30 }}
                                         />
                                     )}
@@ -103,7 +103,7 @@ function Navbar() {
                 {/* Desktop CTA */}
                 <a
                     href="#contact"
-                    className="focus-ring hidden flex-none rounded-xl bg-gradient-to-r from-accent-500 to-accent-400 px-4 py-2.5 text-sm font-bold whitespace-nowrap text-brand-700 shadow-lg shadow-brand-700/20 transition-transform hover:scale-[1.03] lg:inline-block"
+                    className="focus-ring hidden flex-none rounded-xl bg-gradient-to-r from-accent-500 to-accent-600 px-4 py-2.5 text-sm font-bold whitespace-nowrap text-white shadow-lg shadow-accent-500/30 transition-transform hover:scale-[1.03] lg:inline-block"
                 >
                     Book a Free Demo
                 </a>
@@ -114,7 +114,7 @@ function Navbar() {
                     onClick={() => setOpen((v) => !v)}
                     aria-label={open ? "Close menu" : "Open menu"}
                     aria-expanded={open}
-                    className="focus-ring glass flex h-10 w-10 flex-none items-center justify-center rounded-xl text-white lg:hidden"
+                    className="focus-ring glass flex h-10 w-10 flex-none items-center justify-center rounded-xl text-ink-900 lg:hidden"
                 >
                     {open ? <FiX className="h-5 w-5" /> : <FiMenu className="h-5 w-5" />}
                 </button>
@@ -140,8 +140,8 @@ function Navbar() {
                                             onClick={() => setOpen(false)}
                                             aria-current={isActive ? "page" : undefined}
                                             className={`focus-ring block rounded-xl px-4 py-3 text-base font-medium transition-colors ${isActive
-                                                ? "bg-white/10 text-white"
-                                                : "text-ink-200 hover:bg-white/5 hover:text-white"
+                                                ? "bg-accent-500/12 text-accent-600"
+                                                : "text-ink-200 hover:bg-brand-700/5 hover:text-accent-600"
                                                 }`}
                                         >
                                             {link.label}
@@ -153,7 +153,7 @@ function Navbar() {
                                 <a
                                     href="#contact"
                                     onClick={() => setOpen(false)}
-                                    className="focus-ring block rounded-xl bg-gradient-to-r from-accent-500 to-accent-400 px-4 py-3 text-center text-base font-bold text-brand-700"
+                                    className="focus-ring block rounded-xl bg-gradient-to-r from-accent-500 to-accent-600 px-4 py-3 text-center text-base font-bold text-white"
                                 >
                                     Book a Free Demo
                                 </a>

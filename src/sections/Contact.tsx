@@ -72,7 +72,7 @@ function Contact() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                                className="focus-ring glass flex items-center gap-4 rounded-2xl p-5 transition-colors hover:bg-white/10"
+                                className="focus-ring glass flex items-center gap-4 rounded-2xl p-5 transition-colors hover:bg-brand-700/5"
                             >
                                 <span
                                     className={`flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-gradient-to-br ${a.accent} text-white`}
@@ -83,13 +83,13 @@ function Contact() {
                                     <p className="text-xs tracking-wide text-ink-400 uppercase">
                                         {a.label}
                                     </p>
-                                    <p className="font-medium text-white">{a.value}</p>
+                                    <p className="font-medium text-ink-900">{a.value}</p>
                                 </div>
                             </motion.a>
                         ))}
 
                         <div className="glass-strong rounded-2xl p-6">
-                            <p className="font-display text-lg font-semibold text-white">
+                            <p className="font-display text-lg font-semibold text-ink-900">
                                 Free demo session
                             </p>
                             <p className="mt-1 text-sm text-ink-400">
@@ -132,13 +132,13 @@ function Contact() {
                                 rows={4}
                                 required
                                 placeholder="Tell me a little about your goals…"
-                                className="focus-ring w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-ink-600 focus:border-accent-400"
+                                className="focus-ring w-full resize-none rounded-xl border border-brand-700/15 bg-white/70 px-4 py-3 text-sm text-ink-900 placeholder:text-ink-600 focus:border-accent-500"
                             />
                         </div>
 
                         <button
                             type="submit"
-                            className="focus-ring group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-accent-500 to-accent-400 px-6 py-3.5 text-sm font-bold text-brand-700 shadow-lg shadow-accent-500/30 transition-transform hover:scale-[1.02] sm:text-base"
+                            className="focus-ring group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-accent-500 to-accent-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-accent-500/30 transition-transform hover:scale-[1.02] sm:text-base"
                         >
                             {sent ? (
                                 <>
@@ -179,7 +179,7 @@ function Field({ id, label, type, placeholder }: FieldProps) {
                 type={type}
                 required
                 placeholder={placeholder}
-                className="focus-ring w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-ink-600 focus:border-accent-400"
+                className="focus-ring w-full rounded-xl border border-brand-700/15 bg-white/70 px-4 py-3 text-sm text-ink-900 placeholder:text-ink-600 focus:border-accent-500"
             />
         </div>
     );
