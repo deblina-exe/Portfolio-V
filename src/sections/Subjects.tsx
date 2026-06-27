@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
 import SectionHeading from "../components/SectionHeading";
+import Reveal from "../components/Reveal";
+import SpotlightCard from "../components/SpotlightCard";
 import { subjectGroups } from "../data/content";
 
 /** Subjects taught, grouped by class level, as premium gradient-border cards. */
@@ -32,25 +33,26 @@ function Subjects() {
 
                             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                                 {group.subjects.map((subject, i) => (
-                                    <motion.article
+                                    <Reveal
                                         key={`${group.level}-${subject.title}`}
-                                        initial={{ opacity: 0, y: 28 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true, margin: "-50px" }}
-                                        transition={{ duration: 0.45, delay: (i % 3) * 0.08 }}
-                                        whileHover={{ y: -6 }}
-                                        className="group relative rounded-2xl bg-gradient-to-br from-brand-400/40 to-accent-400/40 p-px"
+                                        delay={(i % 3) * 0.08}
+                                        className="h-full"
                                     >
-                                        {/* Inner glass surface creates the gradient-border effect */}
-                                        <div className="glass flex items-center gap-4 rounded-2xl p-5">
-                                            <span className="flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-accent-500 text-white shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                                                <subject.icon className="h-6 w-6" />
-                                            </span>
-                                            <h4 className="font-display text-base font-semibold text-ink-900">
-                                                {subject.title}
-                                            </h4>
-                                        </div>
-                                    </motion.article>
+                                        <SpotlightCard
+                                            spotlight={false}
+                                            className="group relative h-full rounded-2xl bg-gradient-to-br from-brand-400/40 to-accent-400/40 p-px"
+                                        >
+                                            {/* Inner glass surface creates the gradient-border effect */}
+                                            <div className="glass flex items-center gap-4 rounded-2xl p-5">
+                                                <span className="flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-accent-500 text-white shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                                                    <subject.icon className="h-6 w-6" />
+                                                </span>
+                                                <h4 className="font-display text-base font-semibold text-ink-900">
+                                                    {subject.title}
+                                                </h4>
+                                            </div>
+                                        </SpotlightCard>
+                                    </Reveal>
                                 ))}
                             </div>
                         </div>

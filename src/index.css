@@ -146,6 +146,43 @@ body {
     outline: 2px solid var(--color-accent-500);
     outline-offset: 3px;
   }
+
+  /* Interactive spotlight + 3D tilt card */
+  .spotlight-card {
+    position: relative;
+    transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+  }
+
+  .spotlight-card:hover {
+    box-shadow:
+      0 28px 60px -22px rgba(44, 62, 80, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  }
+
+  .spotlight-card__glow {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 50%),
+        rgba(74, 139, 196, 0.2),
+        transparent 60%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .spotlight-card:hover .spotlight-card__glow {
+    opacity: 1;
+  }
+
+  .spotlight-card__content {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 /* ============================================================

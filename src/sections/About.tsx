@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
 import { FiTarget, FiUser, FiAward, FiSmile } from "react-icons/fi";
 import SectionHeading from "../components/SectionHeading";
 import Reveal from "../components/Reveal";
+import SpotlightCard from "../components/SpotlightCard";
 
 const focusAreas = [
     { icon: FiTarget, title: "Concept Clarity", text: "Deep understanding over rote memorization." },
@@ -45,11 +45,8 @@ function About() {
 
                     <div className="grid gap-5 sm:grid-cols-2">
                         {focusAreas.map((f, i) => (
-                            <Reveal key={f.title} delay={i * 0.1}>
-                                <motion.div
-                                    whileHover={{ y: -4 }}
-                                    className="glass group h-full rounded-2xl p-6"
-                                >
+                            <Reveal key={f.title} delay={i * 0.1} className="h-full">
+                                <SpotlightCard className="glass group h-full rounded-2xl p-6">
                                     <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-accent-500 to-accent-600 text-white shadow-lg shadow-accent-500/30 transition-transform group-hover:scale-110">
                                         <f.icon className="h-6 w-6" />
                                     </span>
@@ -59,7 +56,7 @@ function About() {
                                     <p className="mt-1 text-sm leading-relaxed text-ink-400">
                                         {f.text}
                                     </p>
-                                </motion.div>
+                                </SpotlightCard>
                             </Reveal>
                         ))}
                     </div>

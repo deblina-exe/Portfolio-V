@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import { FiArrowRight, FiAward } from "react-icons/fi";
 import {
@@ -9,8 +10,36 @@ import {
     FaGraduationCap,
 } from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi2";
-import { tutor } from "../data/content";
+import { tutor, heroWords, highlights } from "../data/content";
 import dpImage from "../assets/dp.jpeg";
+
+/** Headline word that cycles through the subjects taught. */
+function RotatingWord() {
+    const [i, setI] = useState(0);
+    useEffect(() => {
+        const id = setInterval(
+            () => setI((v) => (v + 1) % heroWords.length),
+            2200,
+        );
+        return () => clearInterval(id);
+    }, []);
+    return (
+        <span className="relative inline-flex h-[1.3em] min-w-[11ch] items-center overflow-hidden align-bottom">
+            <AnimatePresence mode="wait">
+                <motion.span
+                    key={heroWords[i]}
+                    initial={{ y: "110%", opacity: 0 }}
+                    animate={{ y: "0%", opacity: 1 }}
+                    exit={{ y: "-110%", opacity: 0 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    className="text-gradient font-bold whitespace-nowrap"
+                >
+                    {heroWords[i]}
+                </motion.span>
+            </AnimatePresence>
+        </span>
+    );
+}
 
 /** Floating decorative education icon. */
 function FloatingIcon({
@@ -85,6 +114,16 @@ function Hero() {
                         {tutor.description}
                     </motion.p>
 
+                    {/* Rotating subject line */}
+                    <motion.p
+                        initial={{ opacity: 0, y: 24 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="mt-4 flex items-center justify-center gap-2 font-display text-lg font-semibold text-ink-200 sm:text-xl lg:justify-start"
+                    >
+                        Expert guidance in <RotatingWord />
+                    </motion.p>
+
                     {/* Experience badge */}
                     <motion.div
                         initial={{ opacity: 0, y: 24 }}
@@ -119,6 +158,23 @@ function Hero() {
                             View Qualifications
                         </a>
                     </motion.div>
+
+                    {/* Trust highlights */}
+                    <motion.ul
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.38 }}
+                        className="mt-8 flex flex-wrap justify-center gap-2.5 lg:justify-start"
+                    >
+                        {highlights.map((h) => (
+                            <li
+                                key={h}
+                                className="glass rounded-full px-3.5 py-1.5 text-xs font-medium text-ink-200 sm:text-sm"
+                            >
+                                {h}
+                            </li>
+                        ))}
+                    </motion.ul>
                 </div>
 
                 {/* Right: profile placeholder with floating icons */}
