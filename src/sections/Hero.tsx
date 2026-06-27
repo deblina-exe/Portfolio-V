@@ -8,8 +8,9 @@ import {
     FaCalculator,
     FaGraduationCap,
 } from "react-icons/fa";
-import { HiAcademicCap, HiSparkles } from "react-icons/hi2";
+import { HiSparkles } from "react-icons/hi2";
 import { tutor } from "../data/content";
+import dpImage from "../assets/dp.jpeg";
 
 /** Floating decorative education icon. */
 function FloatingIcon({
@@ -131,13 +132,15 @@ function Hero() {
                     <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-to-br from-accent-400/40 to-brand-300/30 blur-2xl" />
 
                     <div className="glass-strong rounded-[2rem] p-6 sm:p-8">
-                        {/* Image placeholder */}
-                        <div className="relative mx-auto flex aspect-square w-full items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-brand-600 to-brand-700">
-                            <div className="text-center">
-                                <span className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-accent-500 to-accent-400 text-white shadow-xl">
-                                    <HiAcademicCap className="h-12 w-12" />
-                                </span>
-                                <p className="mt-4 font-display text-lg font-bold text-white">
+                        {/* Profile photo */}
+                        <div className="relative mx-auto aspect-square w-full overflow-hidden rounded-2xl bg-gradient-to-br from-brand-600 to-brand-700">
+                            <img
+                                src={dpImage}
+                                alt={`${tutor.name} — ${tutor.title}`}
+                                className="h-full w-full object-cover"
+                            />
+                            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-900/85 via-ink-900/35 to-transparent p-4 pt-10 text-center">
+                                <p className="font-display text-lg font-bold text-white">
                                     {tutor.name}
                                 </p>
                                 <p className="text-sm text-accent-300">{tutor.title}</p>
