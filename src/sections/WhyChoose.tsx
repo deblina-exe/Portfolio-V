@@ -1,0 +1,50 @@
+import { motion } from "framer-motion";
+import { FiCheck } from "react-icons/fi";
+import SectionHeading from "../components/SectionHeading";
+import { features } from "../data/content";
+
+/** "Why students choose me" — animated checkmark feature cards. */
+function WhyChoose() {
+    return (
+        <section id="why" className="relative px-5 py-20 sm:px-8 sm:py-28">
+            <div className="mx-auto max-w-5xl">
+                <SectionHeading
+                    eyebrow="The Difference"
+                    title={
+                        <>
+                            Why Students <span className="text-gradient">Choose Me</span>
+                        </>
+                    }
+                    subtitle="A teaching approach built around clarity, care and consistent progress."
+                />
+
+                <div className="grid gap-5 sm:grid-cols-2">
+                    {features.map((feature, i) => (
+                        <motion.div
+                            key={feature.title}
+                            initial={{ opacity: 0, x: i % 2 === 0 ? -24 : 24 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.5, delay: (i % 2) * 0.08 }}
+                            whileHover={{ y: -4 }}
+                            className="glass group flex items-center gap-4 rounded-2xl p-5 sm:p-6"
+                        >
+                            <span className="relative flex h-12 w-12 flex-none items-center justify-center rounded-full bg-gradient-to-br from-accent-500 to-accent-400 text-brand-700 shadow-lg">
+                                <span className="absolute inset-0 rounded-full bg-accent-400/40 opacity-0 transition-opacity duration-300 group-hover:animate-ping group-hover:opacity-100" />
+                                <FiCheck className="relative h-6 w-6" strokeWidth={3} />
+                            </span>
+                            <span className="flex-none">
+                                <feature.icon className="h-6 w-6 text-brand-200" />
+                            </span>
+                            <h3 className="font-display text-base font-semibold text-white sm:text-lg">
+                                {feature.title}
+                            </h3>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}
+
+export default WhyChoose;
