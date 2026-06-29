@@ -46,7 +46,7 @@ export const tutor = {
 
 /** Quick trust chips shown in the hero. */
 export const highlights: string[] = [
-    "CBSE • ICSE • State Boards",
+    "CBSE • ICSE • IGCSE • IBDP • State Boards",
     "Class 5 – 12",
     "Online & Offline",
     "Free Demo Class",
